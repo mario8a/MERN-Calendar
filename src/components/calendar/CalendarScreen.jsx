@@ -47,7 +47,6 @@ export const CalendarScreen = () => {
    }
 
    const onSelectSlot = (e) => {
-      //Implementar cuando se de docble click abrir el modal
       // console.log(e); Muestra el lugar donde se da click (fecha del calendario)
       dispatch(eventClearActiveEvent())
    }
