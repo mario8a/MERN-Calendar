@@ -8,7 +8,7 @@ import DateTimePicker from 'react-datetime-picker';
 import moment from 'moment';
 //actions
 import { uiCloseModal } from '../../actions/ui';
-import { eventAddNew, eventClearActiveEvent, eventUpdated } from '../../actions/events';
+import { eventClearActiveEvent, eventStartAddNew, eventStartUpdate } from '../../actions/events';
 
 const customStyles = {
    content : {
@@ -107,17 +107,10 @@ export const CalendarModal = () => {
       //Si active event es null significa que esta creando un nuevo evento,
       // Si no, esta editando
       if(activeEvent) {
-         dispatch(eventUpdated(formValues)) ///actualizando
+         dispatch(eventStartUpdate(formValues)) ///actualizando
       } else {
          //Creando una nueva
-         dispatch(eventAddNew({
-            ...formValues,
-            id: new Date().getTime(),
-            user: {
-               _id: 132,
-               name: 'Mario'
-            }
-         }));
+         dispatch(eventStartAddNew(formValues));
       }
 
 
