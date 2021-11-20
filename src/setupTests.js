@@ -8,3 +8,5 @@ expect.addSnapshotSerializer(createSerializer({mode: 'deep'}));
 
 const noScroll = () => {};
 Object.defineProperty(global, 'scrollTo', {value: noScroll, writable: true})
+
+HTMLCanvasElement.prototype.getContext = () => {};
